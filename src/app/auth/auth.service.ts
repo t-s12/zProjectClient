@@ -31,6 +31,11 @@ export class AuthService {
   }
 
   logout(){
-    
+    localStorage.removeItem("the_token_49");
+    this.setAuthStatus(false);
+  }
+
+  isAuthenticated(): boolean{
+    return localStorage.getItem("the_token_49") != null;
   }
 }
